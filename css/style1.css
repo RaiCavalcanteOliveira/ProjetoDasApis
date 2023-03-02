@@ -1,0 +1,90 @@
+@import url('https://fonts.googleapis.com/css2?family=Lobster&display=swap');
+
+
+* {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    text-decoration: none;
+}
+
+
+
+
+body {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: linear-gradient(90deg, rgba(223, 109, 2, 0.719) 0%, rgb(224, 192, 6) 35%, rgb(255, 60, 0) 100%);
+    text-align: center;
+    padding-top: 12%;
+
+
+
+
+
+}
+
+.mainzin {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: red;
+    border-radius: 15px;
+    width: 40%;
+    height: 300px;
+    border: solid rgb(243, 243, 243);
+    font-family: 'Lobster';
+
+}
+
+.linksdirecionadores {
+
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 25px;
+    padding-top: 5%;
+
+}
+
+a {
+    color: rgb(255, 255, 255);
+}
+
+.cep {
+    background-color: blue;
+    border-radius: 10px;
+    font-family: 'Lobster';
+    border-radius: 5px;
+    border: solid black;
+}
+
+.cep:hover {
+    color: rgb(255, 187, 0);
+}
+
+.dolarzin {
+    background-color: blue;
+    border-radius: 10px;
+    border-radius: 5px;
+    border: solid black;
+}
+
+.dolarzin:hover {
+    color: rgb(255, 187, 0);
+}
+
+p {
+    font-size: 20px;
+    color: white;
+}
+
+h1 {
+    color: rgb(255, 187, 0);
+}
+
+
+

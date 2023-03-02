@@ -1,0 +1,26 @@
+{
+    "item1": {
+        "name": "Abacate",
+        "reino": "Plantae",
+        "classe": "Magnoli<br>opsida",
+        "imagem": "<img src='abacati.jpg' alt='' width='150px'>",
+        "valor": 800
+    
+    },
+    "item2": {
+        "name": "Maracujá",
+        "reino": "Plantae",
+        "classe": "Magnoli<br>opsida",
+        "imagem": "<img src='marucaja.jpg' alt='' width='150px'>",
+        "valor": 1000
+        
+    },
+    "item3": {
+        "name": "Mamão",
+        "reino": "Plantae",
+        "classe": "Magnolio<br>psida",
+        "imagem": "  <img src='mamao.png' alt='' width='150px'>",
+        "valor": 200000
+      
+    }
+}

@@ -1,0 +1,184 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+
+@import url('https://fonts.googleapis.com/css2?family=Lobster&family=Poppins:wght@200&display=swap');
+
+
+body {
+    background: rgb(30, 26, 111);
+
+}
+
+
+.containerheader {
+    display: flex;
+    justify-content: center;
+}
+
+.containermain {
+    display: flex;
+    justify-content: center;
+}
+
+fieldset {
+    width: 60%;
+    border-radius: 15px;
+    background-color: #b9c641;
+    border: 2px solid rgb(0, 0, 0);
+    margin-top: 2%;
+}
+
+footer {
+    display: block;
+    background-color: #b9c641;
+   
+    font-family: 'Poppins', sans-serif;
+  
+}
+
+div {
+    padding-top: 1%;
+    padding-left: 2%;
+}
+
+.tituloendereco {
+
+  
+    border-radius: 15px;
+    border: solid rgb(0, 0, 0);
+    color: white;
+    background-color: rgb(30, 26, 111);
+    width: 80%;
+    text-align: center;
+    margin: 0 auto;
+    margin-top: 2%;
+
+}
+
+label {
+    font-size: 22px;
+    color: rgb(0, 0, 0);
+    font-family: 'Poppins', sans-serif;
+}
+
+input {
+    width: 200%;
+    height: 30px;
+    border-radius: 15px;
+
+}
+
+h1 {
+    color: rgb(87, 14, 204);
+    font-family: 'Poppins', sans-serif;
+    background-color: #b9c641;
+    border-radius: 15px;
+    border: solid rgb(0, 0, 0);
+    margin-top: 2%
+}
+
+h2 {
+    color: white;
+    font-family: 'Poppins', sans-serif;
+ 
+
+}
+
+legend {}
+
+.containerfooter {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.tituloendereco {
+  height: 30px;
+}
+
+.englobaendeimg {
+    display: flex;
+    flex-direction: row;
+
+}
+
+
+.enblobaendeimg{
+    display: flex;
+    flex-direction: row;
+    gap: 28%;
+
+
+}
+.informacoesendereco {
+    display: flex;
+    flex-direction: column;
+   
+}
+
+
+
+.imgonibus{
+    display: flex;
+    justify-content: center;
+  width: 40%;
+  padding-top: 5%
+
+  
+  
+  
+
+
+  
+}
+
+img{
+   border-radius: 15px;
+   border: solid white;
+
+}
+
+ .digite{
+    font-size: 17px;
+       font-family: 'Poppins', sans-serif;
+      color: rgb(87, 14, 204);
+ 
+ }
+ a{
+    padding-left: 3%;
+    font-size: 20px;
+    text-decoration: none;
+    color: rgb(87, 14, 204);
+ }
+ a:hover{
+    color: rgb(19, 155, 218);
+ }
+
+
+ @media(max-width:1288px){
+    .imgonibus{
+        display: none;
+      
+    }
+    
+
+    input{
+        width: 100%;
+        
+    }
+    .englobaendeimg{
+        display: flex;
+        flex-direction: row;
+        
+    }
+    .informacoesendereco{
+       margin: 0 auto;
+    }
+}
+
+footer{
+    height: 240px;
+}

@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tempo</title>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <link rel="stylesheet" href="css/style4.css">
+</head>
+
+<body>
+    <header>
+        <div class="enblobaheader">
+        <a href="index.html">Retorne para a página inicial</a>
+    </div>
+
+    </header>
+    <main class="englobatemperatura">
+        <div class="tempinho">
+             
+            <div class="tittemp">
+            <h1><u>Temperatura</u></h1>
+        </div>
+            <p id="temperatura">Carregando...</p>
+             
+            <section class="englobatempopesq">
+            <div class="pesquisaa">
+                <input type="text" id="buscar">
+
+                <br>
+                <button onclick="getWeather()" id="buscar">Buscar</button>
+            </div>
+
+            <div class="simbolotempo" id="simbolotempoo">
+                <img class="nuvem" id="nuvemm" src="imagens/nuvem2.png" alt="" width="200px">
+                <img class="relampago"  src="imagens/relampago.png" alt="" width="140px">
+                <img class="chuva" src="imagens/chuvagif.gif" alt="" width="220px">
+            </div>
+
+
+        </section>
+
+            <div>
+
+
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <h2>Todos os direitos reservados</h2>
+    </footer>
+    
+    <script>
+        //Biblioteca Axios para realizar uma
+        //requisição HTTP a API da OpenWeatherMAP e
+        //obter a previsão
+
+        //Esta linha define a função getWeather como
+        //uma função assincrona.Esperando uma 
+        //resposta da API
+
+        async function getWeather() {
+
+            var buscar = document.getElementById('buscar').value;
+
+            //Nesta linha fazendo uma chamada a API usando a biblioteca AXIOS. A URL da API inclui as informações de localização (Mogi das Cruzes), a unidade de medida (Celsius) e chave API KEY.
+            const response = await axios.get(`https://api.openweathermap.org/data/2.5/weather?q=${buscar}&units=metric&appid=64ed82577ced7f69cb1687f0ce536131`);
+            //Resposta em (Celsius e a localização) e armazenar na variável tempCelsius
+
+            const tempCelsius = response.data.main.temp;
+            document.querySelector('#temperatura').innerHTML = `<h1 id='mostratemperatura'>A temperatura atual em ${buscar} é de ${tempCelsius.toFixed(2)}°C. </h1>`;
+            
+           
+
+            if(tempCelsius<25){
+                document.querySelector(".relampago").style.visibility="visible"
+                document.querySelector(".chuva").style.visibility="visible"
+                document.querySelector('#nuvemm').src="imagens/nuvem2.png"
+                docuemnt.querySelector(".relampago").src="imagens/relampago.png";
+                docuemnt.querySelector(".chuva").src="imagens/gotasdechuva.png";
+               
+            }else{
+                document.querySelector('#nuvemm').src="imagens/Sol.gif"
+                document.querySelector(".relampago").style.visibility="hidden"
+                document.querySelector(".chuva").style.visibility="hidden"
+            }
+
+        }
+
+      
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>API-CEP</title>
+    <link rel="stylesheet" href="css/style2.css">
+</head>
+<body>
+    <header class="containerheader">
+    <h1>Cadastro de Usuário</h1>
+</header>
+<main class="containermain">
+        <fieldset>
+          
+        
+            
+            <h2 class="tituloendereco">Endereço</h2>
+           
+            <br>
+            <section class="enblobaendeimg">
+            <div class="informacoesendereco">
+                <p class="digite">Digite seu CEP logo abaixo:</p>
+            <div>
+            <label for="cep">CEP:</label>
+         <br>
+            <input type="text" id="cep" autocomplete="off">
+        </div>
+            <br>
+            <div class="rua">
+            <label for="rua">Rua:</label>
+            <br>
+            <input type="text" id="rua" readonly>
+        </div>
+            <br>
+       
+            <div>
+            <label for="numero">Número:</label>
+            <br>
+            <input type="text" id="numero">
+        </div>
+            <br>
+        
+
+            <div>
+            <label for="bairro">Bairro:</label>
+            <br>
+            <input type="text" id="bairro" readonly>
+        </div>
+            <br>
+            <div>
+            <label for="cidade">Cidade:</label>
+            <br>
+            <input type="text" id="cidade" readonly>
+        </div>
+            <br>
+
+            <div>
+            <label for="estado">Estado:</label>
+            <br>
+            <input type="text" id="estado" readonly>
+        </div>
+    <br>
+</div>
+
+ <div class="imgonibus"> 
+   <img src="imagens/onibus.png" alt="" width="100%" height="40%">
+ </div>
+   
+ 
+    
+</section>
+<hr>
+<a href="index.html">Página Inicial</a>
+</main>
+
+<footer class="containerfooter">
+    
+    <h2>Todos os direitos reservados</h2>
+</footer>
+
+
+</body>
+<script>
+    //preencher os inputs com arrow functions
+    const preencherFormulario = (endereco) => {
+    document.getElementById("rua").value = endereco.logradouro;
+    document.getElementById("bairro").value = endereco.bairro;
+    document.getElementById("cidade").value = endereco.localidade;
+    document.getElementById("estado").value = endereco.uf;
+}
+//autopreenchimento
+const cepValido = (cep) => {
+    if (cep.length == 8) {
+        return true;
+    } else {
+        return false;
+    }
+}
+//buscar API
+//Com async e await podemos trabalhar com código assíncrono em um estilo mais parecido com o bom e velho código síncrono.
+const pesquisarCep = async () => {
+    const cep = document.getElementById("cep").value;
+    const url = `http://viacep.com.br/ws/${cep}/json/`;
+    if (cepValido(cep)) {
+        const dados = await fetch(url);
+        const endereco = await dados.json();
+            preencherFormulario(endereco);
+        }
+}
+document.getElementById("cep").addEventListener("focusout", pesquisarCep);
+</script>
+</html>
